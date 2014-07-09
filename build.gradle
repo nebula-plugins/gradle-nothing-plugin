@@ -21,3 +21,10 @@ contacts {
         github 'quidryan'
     }
 }
+
+task attribs << {
+    def myList = new nebula.plugin.plugin.NebulaBintrayPluginConfiguration().calculateAttributes(project)
+    println myList
+}
+
+attribs.dependsOn assemble
