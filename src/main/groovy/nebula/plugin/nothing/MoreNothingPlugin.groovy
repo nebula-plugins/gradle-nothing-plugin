@@ -8,9 +8,9 @@ import org.gradle.api.logging.Logging
 /**
  * Does nothing.
  */
-class NothingPlugin implements Plugin<Project> {
+class MoreNothingPlugin implements Plugin<Project> {
 
-    Logger logger = Logging.getLogger(NothingPlugin);
+    Logger logger = Logging.getLogger(MoreNothingPlugin);
 
     Project project
 

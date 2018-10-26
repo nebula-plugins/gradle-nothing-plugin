@@ -1,24 +1,74 @@
 plugins {
     id "nebula.plugin-plugin" version "9.1.1"
+    id 'java-gradle-plugin'
 }
 
-description 'Gradle plugin to do nothing'
+description 'Gradle plugins to do nothing'
 
 dependencies {
 }
 
-def pomConfig = {
-    inceptionYear '2014'
+// Specify the details of each plugin
+gradlePlugin {
+    plugins {
+        nothingPlugin {
+            id = 'nebula.nothing-plugin'
+            displayName = 'Gradle nothing plugin'
+            description = "Plugin that does nothing"
+            implementationClass = 'nebula.plugin.nothing.NothingPlugin'
+        }
+        moreNothingPlugin {
+            id = 'nebula.more-nothing-plugin'
+            displayName = 'Gradle more nothing plugin'
+            description = "Another plugin that does nothing"
+            implementationClass = 'nebula.plugin.nothing.MoreNothingPlugin'
+        }
+    }
+}
 
-    developers {
-        developer {
-            id 'quidryan'
-            name 'Justin Ryan'
-            email 'justin@halfempty.org'
-            roles {
-                role 'Developer'
+// These settings are set for the whole plugin bundle
+pluginBundle {
+    website = 'https://github.com/nebula-plugins/gradle-nothing-plugin'
+    vcsUrl = 'https://github.com/nebula-plugins/gradle-nothing-plugin.git'
+
+    // tags and description can be set for the whole bundle here, but can also
+    // be set / overridden in the config for specific plugins
+    description = 'Gradle plugins to do nothing'
+    tags = ['nebula', 'nothing', 'example']
+}
+
+publishing {
+    repositories {
+        maven {
+            url = "$buildDir/maven-repo"
+        }
+    }
+    publications {
+        // publish with a customized POM
+        mavenJava(MavenPublication) {
+            pom {
+                name = 'Gradle plugins to do nothing - with customized POM'
+                inceptionYear = '2014'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'quidryan'
+                        name = 'Justin Ryan'
+                        email = 'justin@halfempty.org'
+                        roles = ['Developer']
+                        timezone = '-8'
+                    }
+                    developer {
+                        id = 'OdysseusLives'
+                        roles = ['Developer']
+                    }
+                }
             }
-            timezone '-8'
         }
     }
 }
