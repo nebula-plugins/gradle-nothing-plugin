@@ -1,11 +1,8 @@
-buildscript {
-    repositories { jcenter() }
-    dependencies { classpath 'com.netflix.nebula:nebula-plugin-plugin:1.9.6-SNAPSHOT' }
+plugins {
+    id "nebula.plugin-plugin" version "9.1.1"
 }
 
 description 'Gradle plugin to do nothing'
-apply plugin: 'nebula-plugin'
-apply plugin: 'nebula-sign'
 
 dependencies {
 }
@@ -18,19 +15,10 @@ def pomConfig = {
             id 'quidryan'
             name 'Justin Ryan'
             email 'justin@halfempty.org'
-            roles{
+            roles {
                 role 'Developer'
             }
             timezone '-8'
-        }
-    }
-}
-
-import nebula.plugin.publishing.maven.NebulaBaseMavenPublishingPlugin
-plugins.withType(NebulaBaseMavenPublishingPlugin) {
-    withMavenPublication {
-        pom.withXml {
-            asNode().children().last() + pomConfig
         }
     }
 }
