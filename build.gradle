@@ -38,6 +38,7 @@ pluginBundle {
     tags = ['nebula', 'nothing', 'example']
 }
 
+// gradle-contacts-plugin uses this to set contact information in the publications
 contacts {
     'justin@halfempty.org' {
         moniker 'Justin Ryan'
