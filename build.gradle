@@ -62,3 +62,7 @@ publishing {
         }
     }
 }
+
+dependencyLocking {
+    lockAllConfigurations()
+}
