@@ -56,7 +56,8 @@ publishing {
         }
     }
     publications {
-        pluginMaven(MavenPublication) {
+        // customize all publications of type MavenPublication
+        withType(MavenPublication) {
             pom {
                 inceptionYear = '2014'
             }
