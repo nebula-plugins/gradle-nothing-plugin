@@ -1,5 +1,5 @@
 plugins {
-    id "nebula.plugin-plugin" version "9.1.2"
+    id "nebula.plugin-plugin" version "9.1.3"
     id 'java-gradle-plugin'
 }
 
@@ -55,17 +55,9 @@ publishing {
         }
     }
     publications {
-        // publish with a customized POM
         pluginMaven(MavenPublication) {
             pom {
-                name = 'Gradle plugins to do nothing - with customized POM'
                 inceptionYear = '2014'
-                licenses {
-                    license {
-                        name = 'The Apache License, Version 2.0'
-                        url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
             }
         }
     }
