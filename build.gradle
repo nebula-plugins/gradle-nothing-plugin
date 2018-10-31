@@ -1,11 +1,13 @@
 plugins {
-    id "nebula.plugin-plugin" version "9.1.1"
+    id "nebula.plugin-plugin" version "9.1.2"
     id 'java-gradle-plugin'
 }
 
-description 'Gradle plugins to do nothing'
+description 'Gradle plugins to do nothing' // nebula-plugin-plugin sets this as the pluginBundle description
 
 dependencies {
+    compile 'com.google.collections:google-collections:1.+' // to verify '1.+' resolves to static version
+    compile 'commons-logging:commons-logging:latest.release' // to verify 'latest.release' resolves to static version
 }
 
 // Specify the details of each plugin
@@ -28,13 +30,22 @@ gradlePlugin {
 
 // These settings are set for the whole plugin bundle
 pluginBundle {
-    website = 'https://github.com/nebula-plugins/gradle-nothing-plugin'
-    vcsUrl = 'https://github.com/nebula-plugins/gradle-nothing-plugin.git'
+    // nebula-plugin-plugin sets the website, vcsUrl, and description
 
     // tags and description can be set for the whole bundle here, but can also
     // be set / overridden in the config for specific plugins
-    description = 'Gradle plugins to do nothing'
     tags = ['nebula', 'nothing', 'example']
+}
+
+contacts {
+    'justin@halfempty.org' {
+        moniker 'Justin Ryan'
+        github 'Justin Ryan'
+        role 'Developer'
+    }
+    '2860150+OdysseusLives@users.noreply.github.com' {
+        github 'OdysseusLives'
+    }
 }
 
 publishing {
@@ -45,7 +56,7 @@ publishing {
     }
     publications {
         // publish with a customized POM
-        mavenJava(MavenPublication) {
+        pluginMaven(MavenPublication) {
             pom {
                 name = 'Gradle plugins to do nothing - with customized POM'
                 inceptionYear = '2014'
@@ -53,19 +64,6 @@ publishing {
                     license {
                         name = 'The Apache License, Version 2.0'
                         url = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                    }
-                }
-                developers {
-                    developer {
-                        id = 'quidryan'
-                        name = 'Justin Ryan'
-                        email = 'justin@halfempty.org'
-                        roles = ['Developer']
-                        timezone = '-8'
-                    }
-                    developer {
-                        id = 'OdysseusLives'
-                        roles = ['Developer']
                     }
                 }
             }

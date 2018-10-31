@@ -1,5 +1,8 @@
 package nebula.plugin.nothing
 
+import com.google.common.collect.ImmutableList
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.impl.NoOpLog
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logger
@@ -8,7 +11,7 @@ import org.gradle.api.logging.Logging
 /**
  * Does nothing.
  */
-class NothingPlugin implements Plugin<Project> {
+class NothingPlugin extends NoOpLog implements Plugin<Project> {
 
     Logger logger = Logging.getLogger(NothingPlugin);
 
@@ -18,5 +21,6 @@ class NothingPlugin implements Plugin<Project> {
 
         this.project = project
 
+        logger.info("Hello, " + ImmutableList.of("friend").get(0));
     }
 }
