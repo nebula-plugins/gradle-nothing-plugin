@@ -62,3 +62,6 @@ publishing {
 dependencyLocking {
     lockAllConfigurations()
 }
+
+// for tests in this repo
+test.dependsOn('generateDescriptorFileForPluginIvyPublication', 'generatePomFileForNebulaPublication', 'generatePomFileForPluginMavenPublication')
