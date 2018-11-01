@@ -5,14 +5,13 @@ plugins {
     id 'java-gradle-plugin'
 }
 
-description 'Gradle plugins to do nothing' // nebula-plugin-plugin sets this as the pluginBundle description
+description 'Gradle plugins to do nothing'
 
 dependencies {
-    compile 'com.google.collections:google-collections:1.+' // to verify '1.+' resolves to static version
-    compile 'commons-logging:commons-logging:latest.release' // to verify 'latest.release' resolves to static version
+    compile 'com.google.collections:google-collections:1.+'
+    compile 'commons-logging:commons-logging:latest.release'
 }
 
-// Specify the details of each plugin
 gradlePlugin {
     plugins {
         nothingPlugin {
@@ -30,16 +29,10 @@ gradlePlugin {
     }
 }
 
-// These settings are set for the whole plugin bundle
 pluginBundle {
-    // nebula-plugin-plugin sets the website, vcsUrl, and description
-
-    // tags and description can be set for the whole bundle here, but can also
-    // be set / overridden in the config for specific plugins
     tags = ['nebula', 'nothing', 'example']
 }
 
-// gradle-contacts-plugin uses this to set contact information in the publications
 contacts {
     'justin@halfempty.org' {
         moniker 'Justin Ryan'
@@ -58,7 +51,6 @@ publishing {
         }
     }
     publications {
-        // customize all publications of type MavenPublication
         withType(MavenPublication) {
             pom {
                 inceptionYear = '2014'
