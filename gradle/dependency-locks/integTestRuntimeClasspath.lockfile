@@ -4,7 +4,7 @@
 cglib:cglib-nodep:3.2.2
 com.google.collections:google-collections:1.0
 com.google.guava:guava:19.0
-com.netflix.nebula:nebula-test:7.2.5
+com.netflix.nebula:nebula-test:7.3.0
 commons-io:commons-io:2.5
 commons-logging:commons-logging:1.2
 junit:junit:4.12
