@@ -51,6 +51,7 @@ contacts {
 publishing {
     repositories {
         maven {
+            name 'distMaven'
             url = "$buildDir/maven-repo"
         }
     }

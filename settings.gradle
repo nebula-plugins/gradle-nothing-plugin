@@ -1,1 +1,3 @@
 rootProject.name='gradle-nothing-plugin'
+
+enableFeaturePreview("GRADLE_METADATA")
