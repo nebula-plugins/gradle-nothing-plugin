@@ -10,20 +10,15 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
-      # - uses: actions/cache@v1
-      #   id: gradle-cache
-      #   with:
-      #     path: $HOME/.gradle/caches
-      #     key: gradle-local-cache
-      # - uses: actions/cache@v1
-      #   id: gradle-wrapper-cache
-      #   with:
-      #     path: $HOME/.gradle/wrapper
-      #     key: gradle-local-wrapper
+      - uses: actions/cache@v1
+        id: gradle-cache
+        with:
+          path: $HOME/.gradle/caches
+          key: gradle_local_cache
+      - uses: actions/cache@v1
+        id: gradle-wrapper-cache
+        with:
+          path: $HOME/.gradle/wrapper
+          key: gradle_local_wrapper
       - name: Build with Gradle
         run: ./gradlew --info --stacktrace build
-      - name: List out gradle home contents
-        run: ls -l $HOME/.gradle
-      - name: List out gradle caches
-        run: ls -l $HOME/.gradle/caches
-
