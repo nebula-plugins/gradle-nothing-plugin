@@ -20,9 +20,9 @@ jobs:
         with:
           path: .gradle/wrapper
           key: gradle-local-wrapper
+      - name: Build with Gradle
+        run: ./gradlew --info --stacktrace build
       - name: List out gradle home
         run: echo $GRADLE_USER_HOME
       - name: List out gradle caches
         run: ls -l .gradle/caches
-      - name: Build with Gradle
-        run: ./gradlew --info --stacktrace build
