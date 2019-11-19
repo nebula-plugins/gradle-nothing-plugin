@@ -45,9 +45,9 @@ class PublishedIvyInformationSpec extends Specification {
     private static void assertContainsDependencies(GPathResult ivy) {
         assert ivy.dependencies.dependency.size() > 0
 
-        assert ivy.dependencies.dependency.first().@org.text() == 'com.google.collections'
-        assert ivy.dependencies.dependency.first().@name.text() == 'google-collections'
-        assert ivy.dependencies.dependency.first().@rev.text() == '1.0'
+        assert ivy.dependencies.dependency.first().@org.text() == 'com.google.guava'
+        assert ivy.dependencies.dependency.first().@name.text() == 'guava'
+        assert ivy.dependencies.dependency.first().@rev.text().startsWith('28')
 
 
         assert ivy.dependencies.dependency[1].@org.text() == 'commons-logging'

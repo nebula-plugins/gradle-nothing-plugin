@@ -80,9 +80,9 @@ class PublishedPomInformationSpec extends Specification {
     private static void assertContainsDependencies(GPathResult pom) {
         assert pom.dependencies.dependency.size() > 0
 
-        assert pom.dependencies.dependency[0].groupId.text() == 'com.google.collections'
-        assert pom.dependencies.dependency[0].artifactId.text() == 'google-collections'
-        assert pom.dependencies.dependency[0].version.text() == '1.0'
+        assert pom.dependencies.dependency[0].groupId.text() == 'com.google.guava'
+        assert pom.dependencies.dependency[0].artifactId.text() == 'guava'
+        assert pom.dependencies.dependency[0].version.text().startsWith('28')
 
 
         assert pom.dependencies.dependency[1].groupId.text() == 'commons-logging'
