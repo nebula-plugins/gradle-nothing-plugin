@@ -63,8 +63,6 @@ class PublishedPomInformationSpec extends Specification {
         assert pom.artifactId == 'gradle-nothing-plugin'
         assert pom.description == 'Gradle plugins to do nothing'
         assert pom.groupId == 'com.netflix.nebula'
-        assert pom.url.text().contains('nebula-plugins/gradle-nothing-plugin')
-        assert pom.scm.url.text().contains('nebula-plugins/gradle-nothing-plugin.git')
     }
 
     private static void assertContainsLicense(GPathResult pom) {
