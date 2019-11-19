@@ -12,6 +12,7 @@ com.netflix.nebula:nebula-test:7.5.0
 commons-io:commons-io:2.5
 commons-logging:commons-logging:1.2
 junit:junit:4.12
+org.apache.commons:commons-math3:3.6.1
 org.checkerframework:checker-qual:2.8.1
 org.codehaus.mojo:animal-sniffer-annotations:1.18
 org.hamcrest:hamcrest-core:1.3
