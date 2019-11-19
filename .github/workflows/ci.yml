@@ -14,14 +14,14 @@ jobs:
         id: gradle-cache
         with:
           path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle/dependency-locks') }}
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle/dependency-locks/*.lockfile') }}
           restore-keys: |
             - ${{ runner.os }}-gradle-
       - uses: actions/cache@v1
         id: gradle-wrapper-cache
         with:
           path: ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradlewrapper-${{ hashFiles('gradle/wrapper') }}
+          key: ${{ runner.os }}-gradlewrapper-${{ hashFiles('gradle/wrapper/*') }}
           restore-keys: |
             - ${{ runner.os }}-gradlewrapper-
       - name: Build with Gradle
