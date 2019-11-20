@@ -32,3 +32,6 @@ jobs:
             - ${{ runner.os }}-gradlewrapper-
       - name: Build with Gradle
         run: ./gradlew --info --stacktrace build
+      - name: Post-success actions
+        if: success()
+        run: ./gradlew jacocoTestReport coveralls
