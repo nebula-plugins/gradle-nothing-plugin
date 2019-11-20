@@ -34,5 +34,5 @@ jobs:
         if: contains(github.ref, '-rc.')
         run: echo 'candidate ${{ github.ref }}'
       - name: Publish release
-          if: !contains(github.ref, '-rc.')
-          run: echo 'release ${{ github.ref }}'
+        if: !contains(github.ref, '-rc.')
+        run: echo 'release ${{ github.ref }}'
