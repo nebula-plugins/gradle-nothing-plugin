@@ -1,8 +1,9 @@
 name: ci
 on:
   push:
-    branches:
-      - '!refs/tags/*'
+    tags-ignore:
+      - v*.*.*
+      - v*.*.*-rc.*
   pull_request:
 
 jobs:
