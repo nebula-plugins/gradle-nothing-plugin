@@ -38,6 +38,6 @@ jobs:
         env:
           CI_NAME: github_actions
           CI_BUILD_NUMBER: ${{ github.sha }}
-          CI_BUILD_URL: 'https://github.com/${{ github.repository }}/commit/${{ github.sha }}/checks'
+          CI_BUILD_URL: 'https://github.com/${{ github.repository }}'
           CI_BRANCH: ${{ github.ref }}
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
