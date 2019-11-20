@@ -2,7 +2,7 @@ name: ci
 on:
   push:
     tags-ignore:
-      - '*'
+      - refs/tags/*
   pull_request:
 
 jobs:
