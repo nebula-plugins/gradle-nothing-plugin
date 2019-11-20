@@ -32,5 +32,5 @@ jobs:
         if: contains(github.ref, '-rc.')
         run: ./gradlew --info --stacktrace -Psonatype.username=${{ secrets.sonatypeUsername }} -Psonatype.password=${{ secrets.sonatypePassword }} -Pbintray.user=${{ secrets.bintrayUser }} -Pbintray.apiKey=${{ secrets.bintrayKey }} -Prelease.travisci=true -Prelease.useLastTag=true candidate
       - name: Publish release
-        if: !contains(github.ref, '-rc.')
+        if: (!contains(github.ref, '-rc.'))
         run: ./gradlew --info --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Psonatype.username=${{ secrets.sonatypeUsername }} -Psonatype.password=${{ secrets.sonatypePassword }} -Pbintray.user=${{ secrets.bintrayUser }} -Pbintray.apiKey=${{ secrets.bintrayKey }} -Prelease.travisci=true -Prelease.useLastTag=true final
