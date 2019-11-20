@@ -30,7 +30,7 @@ jobs:
             - ${{ runner.os }}-gradlewrapper-
       - name: Publish candidate
         if: contains(github.ref, '-rc.')
-        run: echo candidate ${{ github.ref }}
+        run: ./gradlew --info --stacktrace -Psonatype.username=${{ secrets.sonatypeUsername }} -Psonatype.password=${{ secrets.sonatypePassword }} -Pbintray.user=${{ secrets.bintrayUser }} -Pbintray.apiKey=${{ secrets.bintrayKey }} -Prelease.travisci=true -Prelease.useLastTag=true candidate
 #      - name: Publish release
 #        if: !contains(github.ref, '-rc.')
 #        run: echo release ${{ github.ref }}
