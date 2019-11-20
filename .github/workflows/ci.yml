@@ -32,6 +32,16 @@ jobs:
             - ${{ runner.os }}-gradlewrapper-
       - name: Build with Gradle
         run: ./gradlew --info --stacktrace build
+      - name: Step conditional environment variable
+        if: GITHUB_EVENT_NAME == pull_request
+        env:
+          CI_PULL_REQUEST: true
       - name: Post-success actions
         if: success()
         run: ./gradlew jacocoTestReport coveralls
+        env:
+          CI_NAME: github_actions
+          CI_BUILD_NUMBER: ${{ GITHUB_SHA }}
+          CI_BUILD_URL: 'https://github.com/${{ GITHUB_REPOSITORY }}/commit/${{ GITHUB_SHA }}/checks'
+          CI_BRANCH: ${{ GITHUB_REF }}
+          COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
