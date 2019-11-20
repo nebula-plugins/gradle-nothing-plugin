@@ -2,6 +2,7 @@ name: ci
 on:
   push:
     branches:
+      - '!refs/tags/*'
   pull_request:
 
 jobs:
