@@ -30,9 +30,11 @@ jobs:
           key: ${{ runner.os }}-gradlewrapper-${{ hashFiles('gradle/wrapper/*') }}
           restore-keys: |
             - ${{ runner.os }}-gradlewrapper-
-      - name: Publish candidate
-        if: contains(github.ref, '-rc.')
-        run: echo 'candidate ${{ github.ref }}'
-      - name: Publish release
-        if: !contains(github.ref, '-rc.')
-        run: echo 'release ${{ github.ref }}'
+      - name: Echo
+        run: echo ${{ github.ref }}
+#      - name: Publish candidate
+#        if: contains(github.ref, '-rc.')
+#        run: echo candidate ${{ github.ref }}
+#      - name: Publish release
+#        if: !contains(github.ref, '-rc.')
+#        run: echo release ${{ github.ref }}
