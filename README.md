@@ -1,6 +1,7 @@
-Nebula Nothing Plugin
+# Nebula Nothing Plugin
 
 ![](https://github.com/nebula-plugins/gradle-nothing-plugin/workflows/ci/badge.svg)
+![](https://github.com/nebula-plugins/gradle-nothing-plugin/workflows/publish/badge.svg)
 =====================
 Just does nothing. But does serve as a decent template for projects.
 
