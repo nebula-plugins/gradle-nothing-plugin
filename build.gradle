@@ -3,6 +3,7 @@ plugins {
     id "nebula.maven-publish" version "10.0.0"
     id "nebula.ivy-publish" version "9.2.0"
     id 'java-gradle-plugin'
+    id 'nebula.java-cross-compile' version '4.1.0' // adds support for github actions JDK install location
 }
 
 description 'Gradle plugins to do nothing'
