@@ -19,8 +19,10 @@
 package nebula.plugin.nothing.publishing
 
 import groovy.util.slurpersupport.GPathResult
+import spock.lang.Ignore
 import spock.lang.Specification
 
+@Ignore
 class PublishedIvyInformationSpec extends Specification {
     def 'expected information in pluginIvy descriptor file'() {
         when:
