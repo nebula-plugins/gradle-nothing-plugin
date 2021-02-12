@@ -30,7 +30,19 @@ jobs:
             - ${{ runner.os }}-gradlewrapper-
       - name: Publish candidate
         if: contains(github.ref, '-rc.')
-        run: ./gradlew --info --stacktrace -Psonatype.username=${{ secrets.sonatypeUsername }} -Psonatype.password=${{ secrets.sonatypePassword }} -Pbintray.user=${{ secrets.bintrayUser }} -Pbintray.apiKey=${{ secrets.bintrayKey }} -Prelease.travisci=true -Prelease.useLastTag=true candidate
+        run: ./gradlew --info --stacktrace -Prelease.useLastTag=true candidate
+        env:
+          NETFLIX_OSS_SIGNING_KEY: ${{ secrets.signingKey }}
+          NETFLIX_OSS_SIGNING_PASSWORD: ${{ secrets.signingPassword }}
+          NETFLIX_OSS_REPO_USERNAME: ${{ secrets.netflixOssUsername }}
+          NETFLIX_OSS_REPO_PASSWORD: ${{ secrets.netflixOssPassword }}
       - name: Publish release
         if: (!contains(github.ref, '-rc.'))
-        run: ./gradlew --info --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Psonatype.username=${{ secrets.sonatypeUsername }} -Psonatype.password=${{ secrets.sonatypePassword }} -Pbintray.user=${{ secrets.bintrayUser }} -Pbintray.apiKey=${{ secrets.bintrayKey }} -Prelease.travisci=true -Prelease.useLastTag=true final
+        run: ./gradlew --info --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Prelease.useLastTag=true final
+        env:
+          NETFLIX_OSS_SONATYPE_USERNAME: ${{ secrets.sonatypeUsername }}
+          NETFLIX_OSS_SONATYPE_PASSWORD: ${{ secrets.sonatypePassword }}
+          NETFLIX_OSS_SIGNING_KEY: ${{ secrets.signingKey }}
+          NETFLIX_OSS_SIGNING_PASSWORD: ${{ secrets.signingPassword }}
+          NETFLIX_OSS_REPO_USERNAME: ${{ secrets.netflixOssUsername }}
+          NETFLIX_OSS_REPO_PASSWORD: ${{ secrets.netflixOssPassword }}
