@@ -8,7 +8,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.netflix.nebula:nebula-plugin-plugin:15.0.0-rc.2"
+        classpath "com.netflix.nebula:nebula-plugin-plugin:15.0.1"
     }
 }
 
