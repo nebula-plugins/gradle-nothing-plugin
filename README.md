@@ -1,5 +1,6 @@
 # Nebula Nothing Plugin
 
+![Support Status](https://img.shields.io/badge/nebula-active-green.svg)
 [![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/com.netflix.nebula/gradle-nothing-plugin/maven-metadata.xml.svg?label=gradlePluginPortal)](https://plugins.gradle.org/plugin/nebula.nothing-plugin)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/nebula-hollow-plugin/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/gradle-nothing-plugin)
 ![CI](https://github.com/nebula-plugins/gradle-nothing-plugin/actions/workflows/ci.yml/badge.svg)
