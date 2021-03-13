@@ -73,8 +73,7 @@ class PublishedPomInformationSpec extends Specification {
 
     private static void assertContainsContacts(GPathResult pom) {
         assert pom.developers.developer.size() > 0
-        assert pom.developers.developer[0].id.text() == 'Justin Ryan'
-        assert pom.developers.developer[1].id.text() == 'OdysseusLives'
+        assert pom.developers.developer[0].id.text() == 'nebula-plugins'
     }
 
     private static void assertContainsDependencies(GPathResult pom) {
