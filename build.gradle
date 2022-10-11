@@ -1,24 +1,10 @@
-buildscript {
-    repositories {
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-        maven {
-            url = 'https://dl.bintray.com/nebula/gradle-plugins'
-        }
-    }
-    dependencies {
-        classpath "com.netflix.nebula:nebula-plugin-plugin:16.3.0"
-    }
-}
-
 plugins {
-    id "nebula.maven-publish" version "10.0.0"
-    id "nebula.ivy-publish" version "9.2.0"
-    id 'nebula.java-cross-compile' version '4.1.0' // adds support for github actions JDK install location
+    id 'com.netflix.nebula.plugin-plugin' version '19.0.1'
+    id "com.netflix.nebula.maven-publish" version "19.0.0"
+    id "com.netflix.nebula.ivy-publish" version "19..0"
+    id 'com.netflix.nebula.java-cross-compile' version '7.0.0' // adds support for github actions JDK install location
 }
 
-apply plugin: 'nebula.plugin-plugin'
 
 description 'Gradle plugins to do nothing'
 
@@ -31,13 +17,13 @@ dependencies {
 gradlePlugin {
     plugins {
         nothingPlugin {
-            id = 'nebula.nothing-plugin'
+            id = 'com.netflix.nebula.nothing-plugin'
             displayName = 'Gradle nothing plugin'
             description = "Plugin that does nothing"
             implementationClass = 'nebula.plugin.nothing.NothingPlugin'
         }
         moreNothingPlugin {
-            id = 'nebula.more-nothing-plugin'
+            id = 'com.netflix.nebula.more-nothing-plugin'
             displayName = 'Gradle more nothing plugin'
             description = "Another plugin that does nothing"
             implementationClass = 'nebula.plugin.nothing.MoreNothingPlugin'
