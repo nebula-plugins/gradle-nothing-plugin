@@ -1,5 +1,5 @@
 plugins {
-    id 'com.netflix.nebula.plugin-plugin' version '19.0.2'
+    id 'com.netflix.nebula.plugin-plugin' version '20.0.0'
     id "com.netflix.nebula.maven-publish" version "19.0.0"
     id "com.netflix.nebula.ivy-publish" version "19.0.0"
     id 'com.netflix.nebula.java-cross-compile' version '7.0.0' // adds support for github actions JDK install location
@@ -21,19 +21,18 @@ gradlePlugin {
             displayName = 'Gradle nothing plugin'
             description = "Plugin that does nothing"
             implementationClass = 'nebula.plugin.nothing.NothingPlugin'
+            tags.set(['nebula', 'nothing', 'example'])
         }
         moreNothingPlugin {
             id = 'com.netflix.nebula.more-nothing-plugin'
             displayName = 'Gradle more nothing plugin'
             description = "Another plugin that does nothing"
             implementationClass = 'nebula.plugin.nothing.MoreNothingPlugin'
+            tags.set(['nebula', 'nothing', 'example'])
         }
     }
 }
 
-pluginBundle {
-    tags = ['nebula', 'nothing', 'example']
-}
 
 contacts {
     'nebula-plugins-oss@netflix.com' {
