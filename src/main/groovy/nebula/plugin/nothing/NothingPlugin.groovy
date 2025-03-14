@@ -1,9 +1,6 @@
 package nebula.plugin.nothing
 
 import com.google.common.collect.ImmutableList
-import nebula.plugin.responsible.FacetDefinition
-import nebula.plugin.responsible.TestFacetDefinition
-import nebula.plugin.responsible.NebulaFacetPlugin
 import org.apache.commons.logging.impl.NoOpLog
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.Plugin
@@ -28,13 +25,13 @@ class NothingPlugin extends NoOpLog implements Plugin<Project> {
         logger.info("Hello, " + ImmutableList.of("friend").get(0));
 
         project.plugins.withType(JavaPlugin).configureEach {
-            project.getPlugins().apply(NebulaFacetPlugin)
-            NamedDomainObjectContainer<FacetDefinition> facetDefinitions = (NamedDomainObjectContainer<FacetDefinition>) project.getExtensions().getByName("facets")
-            TestFacetDefinition smokeTestFacet = new TestFacetDefinition("smokeTest")
-            smokeTestFacet.setTestTaskName("smokeTest")
-            smokeTestFacet.setIncludeInCheckLifecycle(true)
-            smokeTestFacet.setParentSourceSet("test")
-            facetDefinitions.add(smokeTestFacet)
+            try {
+                ClassLoader classLoader = NothingPlugin.class.getClassLoader()
+                Class aClass = classLoader.loadClass("nebula.plugin.responsible.TestFacetDefinition")
+                System.out.println("Loaded $aClass")
+            } catch (Exception e) {
+                System.err.println("Could not load class $e")
+            }
         }
     }
 }
