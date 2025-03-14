@@ -9,6 +9,7 @@ plugins {
 description 'Gradle plugins to do nothing'
 
 dependencies {
+    compileOnly 'com.netflix.nebula:nebula-project-plugin:11.0.0'
     implementation 'com.google.guava:guava:28.+'
     implementation 'commons-logging:commons-logging:latest.release'
     implementation 'org.apache.commons:commons-math3:3.6.1'
@@ -16,6 +17,13 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        nothingSettingsPlugin {
+            id = 'com.netflix.nebula.nothing-settings-plugin'
+            displayName = 'Gradle nothing settings plugin'
+            description = "Plugin that does nothing, well maybe just tries something"
+            implementationClass = 'nebula.plugin.nothing.MaybeNothingSettingsPlugin'
+            tags.set(['nebula', 'nothing', 'example'])
+        }
         nothingPlugin {
             id = 'com.netflix.nebula.nothing-plugin'
             displayName = 'Gradle nothing plugin'
