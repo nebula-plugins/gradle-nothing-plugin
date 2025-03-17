@@ -6,11 +6,13 @@ import org.gradle.api.initialization.Settings
 class MaybeNothingSettingsPlugin implements Plugin<Settings> {
     @Override
     void apply(Settings settings) {
-        settings.gradle.rootProject {rootProject ->
-            def dependencyHandler = rootProject.buildscript.dependencies
-            def buildClasspathDependencies = ['com.netflix.nebula:nebula-project-plugin:11.0.0']
-            buildClasspathDependencies.each {
-                dependencyHandler.add("classpath", it)
+        settings.gradle.beforeProject { project ->
+            if(project == project.rootProject) {
+                def dependencyHandler = project.buildscript.dependencies
+                def buildClasspathDependencies = ['com.netflix.nebula:nebula-project-plugin:11.0.0']
+                buildClasspathDependencies.each {
+                    dependencyHandler.add("classpath", it)
+                }
             }
         }
     }
