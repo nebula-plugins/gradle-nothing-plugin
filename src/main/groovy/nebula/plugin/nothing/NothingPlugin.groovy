@@ -24,7 +24,7 @@ class NothingPlugin extends NoOpLog implements Plugin<Project> {
 
         logger.info("Hello, " + ImmutableList.of("friend").get(0));
 
-        project.plugins.withType(JavaPlugin).configureEach {
+        if(project.plugins.hasPlugin(JavaPlugin)) {
             try {
                 ClassLoader classLoader = NothingPlugin.class.getClassLoader()
                 Class aClass = classLoader.loadClass("nebula.plugin.responsible.TestFacetDefinition")
