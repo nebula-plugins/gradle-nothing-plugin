@@ -1,10 +1,6 @@
 plugins {
-    id 'com.netflix.nebula.plugin-plugin' version '22.0.2'
-    id "com.netflix.nebula.maven-publish" version "19.2.0"
-    id "com.netflix.nebula.ivy-publish" version "19.2.0"
-    id 'com.netflix.nebula.java-cross-compile' version '8.0.0' // adds support for github actions JDK install location
+    id 'com.netflix.nebula.plugin-plugin'
 }
-
 
 description 'Gradle plugins to do nothing'
 
@@ -12,6 +8,7 @@ dependencies {
     implementation 'com.google.guava:guava:28.+'
     implementation 'commons-logging:commons-logging:latest.release'
     implementation 'org.apache.commons:commons-math3:3.6.1'
+    testImplementation("org.spockframework:spock-junit4:2.3-groovy-4.0")
 }
 
 gradlePlugin {
@@ -69,4 +66,4 @@ dependencyLocking {
 }
 
 // for tests in this repo
-test.dependsOn('generateDescriptorFileForPluginIvyPublication', 'generatePomFileForNebulaPublication', 'generatePomFileForPluginMavenPublication')
+test.dependsOn('generatePomFileForNebulaPublication', 'generatePomFileForPluginMavenPublication')
