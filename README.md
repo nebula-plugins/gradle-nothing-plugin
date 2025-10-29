@@ -6,10 +6,10 @@
 
 ### Plugin
 [![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/com.netflix.nebula/gradle-nothing-plugin/maven-metadata.xml.svg?label=gradlePluginPortal)](https://plugins.gradle.org/plugin/nebula.nothing-plugin)
-[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/nebula-hollow-plugin)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/gradle-nothing-plugin)
+[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/gradle-nothing-plugin)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/gradle-nothing-plugin)
 
 ### Library
-[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/nebula-hollow-plugin)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/nebula-nothing-library)
+[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/nebula-nothing-library)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/nebula-nothing-library)
 
 
 =====================

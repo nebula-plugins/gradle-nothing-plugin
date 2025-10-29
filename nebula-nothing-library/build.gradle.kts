@@ -1,5 +1,5 @@
 plugins {
-    java
+    id("com.netflix.nebula.plugin-plugin")
 }
 
 dependencyLocking {
