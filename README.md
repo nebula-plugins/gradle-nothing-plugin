@@ -5,11 +5,11 @@
 [![Apache 2.0](https://img.shields.io/github/license/nebula-plugins/gradle-nothing-plugin.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 ### Plugin
-[![Gradle Plugin Portal](https://img.shields.io/maven-metadata/v/https/plugins.gradle.org/m2/com.netflix.nebula/gradle-nothing-plugin/maven-metadata.xml.svg?label=gradlePluginPortal)](https://plugins.gradle.org/plugin/nebula.nothing-plugin)
-[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/gradle-nothing-plugin)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/gradle-nothing-plugin)
+[![Gradle Plugin Portal](https://img.shields.io/gradle-plugin-portal/v/com.netflix.nebula.nothing-plugin?style=for-the-badge&color=01AF01)](https://plugins.gradle.org/plugin/com.netflix.nebula.nothing-plugin)
+[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/gradle-nothing-plugin?style=for-the-badge&color=01AF01)](https://repo1.maven.org/maven2/com/netflix/nebula/gradle-nothing-plugin/)
 
 ### Library
-[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/nebula-nothing-library)](https://maven-badges.herokuapp.com/maven-central/com.netflix.nebula/nebula-nothing-library)
+[![Maven Central](https://img.shields.io/maven-central/v/com.netflix.nebula/nebula-nothing-library?style=for-the-badge&color=01AF01)](https://repo1.maven.org/maven2/com/netflix/nebula/nebula-nothing-library/)
 
 
 =====================
