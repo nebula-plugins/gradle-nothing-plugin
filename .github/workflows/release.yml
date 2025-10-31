@@ -1,4 +1,4 @@
-name: Nebula Build
+name: Release
 on:
   push:
     tags:
@@ -33,7 +33,7 @@ jobs:
       - name: Verify plugin publication
         if: |
           (!contains(github.ref, '-rc.'))
-        run: ./gradlew  --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }}  -Prelease.useLastTag=true final publishPlugin --validate-only -x check -x signPluginMavenPublication
+        run: ./gradlew  --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }}  -Prelease.useLastTag=true final publishPlugin --validate-only -x check
   publish:
     needs: validatepluginpublication
     runs-on: ubuntu-latest
@@ -70,4 +70,4 @@ jobs:
       - name: Publish release
         if: |
           (!contains(github.ref, '-rc.'))
-        run: ./gradlew --info --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Prelease.useLastTag=true final
+        run: ./gradlew --stacktrace -Dgradle.publish.key=${{ secrets.gradlePublishKey }} -Dgradle.publish.secret=${{ secrets.gradlePublishSecret }} -Prelease.useLastTag=true final
