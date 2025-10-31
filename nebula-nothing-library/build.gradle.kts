@@ -1,5 +1,5 @@
 plugins {
-    id("com.netflix.nebula.plugin-plugin")
+    id("com.netflix.nebula.library")
 }
 
 description = "A Nebula library that does nothing"
