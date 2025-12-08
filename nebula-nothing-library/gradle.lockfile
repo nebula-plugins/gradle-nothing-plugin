@@ -2,14 +2,21 @@
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
 cglib:cglib-nodep:3.2.2=integTestRuntimeClasspath
+com.netflix.nebula:archrules-deprecation:0.3.0=archRules
+com.netflix.nebula:archrules-joda:0.3.0=archRules
+com.netflix.nebula:archrules-nullability:0.3.0=archRules
+com.netflix.nebula:archrules-testing-frameworks:0.3.0=archRules
+com.netflix.nebula:nebula-archrules-core:0.2.3=archRules
 com.netflix.nebula:nebula-test:11.6.3=integTestCompileClasspath,integTestRuntimeClasspath
+com.tngtech.archunit:archunit:1.4.1=archRules
 net.bytebuddy:byte-buddy:1.15.11=integTestCompileClasspath,integTestRuntimeClasspath
 org.apiguardian:apiguardian-api:1.1.2=integTestCompileClasspath,integTestRuntimeClasspath
 org.assertj:assertj-core:3.27.3=integTestCompileClasspath,integTestRuntimeClasspath
-org.jspecify:jspecify:1.0.0=integTestCompileClasspath,integTestRuntimeClasspath
+org.jspecify:jspecify:1.0.0=archRules,compileClasspath,integTestCompileClasspath,integTestRuntimeClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.junit.platform:junit-platform-commons:1.14.0=integTestCompileClasspath,integTestRuntimeClasspath
 org.junit.platform:junit-platform-engine:1.14.0=integTestCompileClasspath,integTestRuntimeClasspath
 org.junit.platform:junit-platform-launcher:1.14.0=integTestCompileClasspath,integTestRuntimeClasspath
 org.objenesis:objenesis:2.4=integTestRuntimeClasspath
 org.opentest4j:opentest4j:1.3.0=integTestCompileClasspath,integTestRuntimeClasspath
-empty=annotationProcessor,compileClasspath,integTestAnnotationProcessor,runtimeClasspath,testAnnotationProcessor,testCompileClasspath,testRuntimeClasspath
+org.slf4j:slf4j-api:2.0.17=archRules
+empty=annotationProcessor,integTestAnnotationProcessor,testAnnotationProcessor

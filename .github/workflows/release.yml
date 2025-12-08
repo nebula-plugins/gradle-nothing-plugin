@@ -9,6 +9,9 @@ jobs:
   validatepluginpublication:
     runs-on: ubuntu-latest
     name: Gradle Plugin Publication Validation
+    environment:
+      name: Publish
+      url: "https://repo1.maven.org/maven2/com/netflix/nebula/gradle-nothing-plugin/"
     env:
       NETFLIX_OSS_SONATYPE_USERNAME: ${{ secrets.ORG_SONATYPE_USERNAME }}
       NETFLIX_OSS_SONATYPE_PASSWORD: ${{ secrets.ORG_SONATYPE_PASSWORD }}
