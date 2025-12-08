@@ -7,10 +7,12 @@ import org.gradle.api.Project
 import org.gradle.api.logging.Logger
 import org.gradle.api.logging.Logging
 import org.gradle.api.plugins.JavaPlugin
+import org.jspecify.annotations.NullMarked
 
 /**
  * Does nothing.
  */
+@NullMarked
 class NothingPlugin extends NoOpLog implements Plugin<Project> {
 
     Logger logger = Logging.getLogger(NothingPlugin);

@@ -6,9 +6,9 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        id("com.netflix.nebula.root") version("24.0.5")
-        id("com.netflix.nebula.plugin-plugin") version("24.0.5")
-        id("com.netflix.nebula.library") version("24.0.5")
+        id("com.netflix.nebula.root") version("25.+")
+        id("com.netflix.nebula.plugin-plugin") version("25.+")
+        id("com.netflix.nebula.library") version("25.+")
     }
 }
 

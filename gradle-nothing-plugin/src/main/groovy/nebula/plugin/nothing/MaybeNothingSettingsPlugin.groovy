@@ -2,7 +2,9 @@ package nebula.plugin.nothing
 
 import org.gradle.api.Plugin
 import org.gradle.api.initialization.Settings
+import org.jspecify.annotations.NullMarked
 
+@NullMarked
 class MaybeNothingSettingsPlugin implements Plugin<Settings> {
     @Override
     void apply(Settings settings) {
